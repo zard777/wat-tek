@@ -18,12 +18,6 @@ print '                                       Author: @zard_sec  '
 #!/usr/bin/env python 
 import time, json, requests
 
-# Original form >> curl 'https://www.purplemet.com/api/analysis' -H 'origin: https://www.purplemet.com' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: en-US,en;q=0.9' -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36' -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' -H 'accept: */*' -H 'referer: https://www.purplemet.com/' -H 'authority: www.purplemet.com' -H 'x-requested-with: XMLHttpRequest' -H 'dnt: 1' --data 'url=http://fb.com' --compressed
-
-# Query result >> curl https://www.purplemet.com/api/analysis/d12ed580-760d-11e8-b324-5908eea5870b
-
-# Shorter form >> curl 'https://www.purplemet.com/api/analysis' -H 'x-requested-with: XMLHttpRequest' --data 'url=http://fb.com' --compressed
-
 print '==============================================================='
 print 'Input domain'
 #dom = raw_input("Please input the domain to query: ")
