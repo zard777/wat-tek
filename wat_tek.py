@@ -8,7 +8,7 @@ print '   \     /  / __ \|  |   /_____/   |  | \  ___/|    <     '
 print '    \/\_/  (____  /__|             |__|  \___  >__|_ \    '
 print '                \/                           \/     \/    '
 print '                                                          '
-print '                                            Version: 0.5  '
+print '                                            Version: 0.6  '
 print '                                       Author: @zard_sec  '
 ####
 #####
@@ -16,13 +16,15 @@ print '                                       Author: @zard_sec  '
 
 
 #!/usr/bin/env python 
-import time, json, requests
+import sys, time, json, requests
 
 print '==============================================================='
-print 'Input domain'
-#dom = raw_input("Please input the domain to query: ")
 
-#print 'Make HTTP REQUEST to PurpleMet API'
+raw_domain = raw_input("Input domain: ")
+
+#print 'Printed domain = '+raw_domain
+
+print '[+] Make HTTP REQUEST to PurpleMet API'
 response = requests.post('https://www.purplemet.com/api/analysis', 
     headers={
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36',
@@ -33,20 +35,19 @@ response = requests.post('https://www.purplemet.com/api/analysis',
     cookies={
 
     },
-    data='url=http://fb.com'
-    #data=dom
+    data='url=http://'+raw_domain
+    
 
 ) 
 
 obj = json.dumps(response.json())
 #demo = json.dumps(obj)
-print obj 
+#print obj 
 
 task_id = json.loads(obj)['task']
 
-#print 'Task[\'1\'] =', task_id['task']
-print '\nWaiting for query.. \n' 
-time.sleep(10)
+print '\n[+] Waiting for query.. \n' 
+time.sleep(8)
 
 #print 'Make HTTP GET to query the previous task'
 
@@ -54,7 +55,10 @@ r = requests.get('https://www.purplemet.com/api/analysis/'+task_id)
 print r.content
 
 #retry_limit = 5
-
+ 
+#if (json.loads(r.content)['msg'] != 'Collecting data...')
+#print r.content
+#else 
 
 
 
