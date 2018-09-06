@@ -7,6 +7,16 @@
     \/\_/  (____  /__|            |__|  \___  >__|_ \
                 \/                          \/     \/
    
-                                  ver 0.6                         
-                                      by @zard_sec
+                                            Version: 0.7
+                                       Author: @zard_sec
+
+===============================================================
+Input domain (example: google.com): github.com
+
+[+] Make HTTP REQUEST
+
+[+] Waiting for query..
+
+[+] Result
+
 ```
